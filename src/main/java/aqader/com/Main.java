@@ -28,7 +28,7 @@ public class Main {
         final String outputFile = ApplicationProperties.INSTANCE.outputFolder();
 
 
-        try (LDAPConnection connection = new LDAPConnection(host, port, user, password);){
+        try (LDAPConnection connection = new LDAPConnection(host, port, user, password)){
             // Specify the search scope and attributes to return (null for all attributes)
             SearchRequest searchRequest = new SearchRequest(baseDN, SearchScope.SUB, searchFilter, "cn");
             SearchResult searchResult = connection.search(searchRequest);
